@@ -35,13 +35,16 @@ function makeArr(){
 }//makeArr
 
 function onSentence(){
-    const shook = arr[0].charAt(1);
+    const len_ss = arr[0].length;
+    const len_sbrm = arr[1].length;
+
+    const shook = arr[0].slice(0,len_ss/2);
     const shooshook = arr[0];
     const si = arr[1].charAt(0);
-    const sibal = arr[1].charAt(0) + arr[1].charAt(1);
-    const ruma = arr[1].charAt(2) + arr[1].charAt(3);
-    const sibalrum = arr[1].charAt(0) + arr[1].charAt(1) + arr[1].charAt(2);
-    const a = arr[1].charAt(3);
+    const sibal = arr[1].slice(0,len_sbrm/2);
+    const ruma = arr[1].slice(len_sbrm/2);
+    const sibalrum = arr[1].slice(0,len_sbrm-1);
+    const a = arr[1].slice(len_sbrm-1);
     const sibalruma = arr[1];
     const sibulrama = arr[2] ? arr[2] : arr[1];
     
