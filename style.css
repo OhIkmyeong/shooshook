@@ -1,0 +1,98 @@
+@charset "utf-8";
+:root{
+    --color:rgb(44,62,78);
+    --gd : linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    --focus:rgb(255, 163, 87);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+    display:flex;flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;align-items:center;
+    width:100%;min-height:100vh;
+    background-image: var(--gd);
+    font-family:sans-serif;}
+
+input,button,label{font-size:inherit;font-family:inherit;color:inherit;cursor:pointer;}
+
+/*  */
+section{
+    position:relative;
+    width:90%; max-width:500px;
+    margin:1rem 0; padding:2rem;
+    background:#fff;
+    border-radius:2px;}
+
+#sect_ipt{
+    display:flex;flex-wrap:wrap;
+    align-items:center;
+    background:rgba(255,255,255,.8);}
+
+[type="text"]{
+    display:block;
+    margin:.5rem .25rem; padding:1em;
+    border:2px solid var(--color);
+    font-weight:bold;color:var(--color);
+    transition:all .3s;}
+
+    [type="text"]:focus{
+        border-color:transparent;
+        outline:3px solid var(--focus);
+    }
+
+    [type="text"]:disabled{
+        opacity:.25;
+        background:transparent;}
+
+#chk{
+    position:absolute;overflow:hidden;width:1px;height:1px;}
+
+[for="chk"]{
+    position:relative;
+    width:1rem;height:1rem;
+    margin:0 .25rem;
+    border:2px solid var(--color);
+    border-radius:2px;}
+
+    #chk:checked + [for="chk"]{
+        background:var(--color);
+        animation:chkbox .3s ease-in-out;}
+
+    @keyframes chkbox {
+        0%{opacity:0; transform:scaleY(1.5) scaleX(.5);}
+        50%{transform:scaleY(.5) scaleX(1.5);}
+        100%{opacity:1;  transform:scaleY(1) scaleX(1);}
+    }
+
+    #chk:checked + [for="chk"]::after{
+        content:'';display:block;position:absolute;
+        width:30%;height:80%;
+        left:50%;top:40%;
+        border:2px solid #fff;border-width:0 3px 3px 0;
+        transform:translate(-50%,-50%) rotate(45deg);}
+
+#btn{
+    display:block;
+    width:calc(100% - 1rem);
+    margin:1rem auto 0;padding:1em;
+    background:rgba(69,103,131);
+    border:none;
+    border-radius:100px;
+    font-weight:bold;color:#fff;}
+
+#btn:active{
+    background:var(--color);
+    transform:translate(2px,2px);}
+
+#v1,#v2{
+    width:calc(50% - .5rem);}
+
+#ipt_chk{
+    width:calc(100% - 2rem);}
+
+
+/*  */
+#sect_result{
+    line-height:2em;
+    font-size:1.5rem;color:var(--color);}
