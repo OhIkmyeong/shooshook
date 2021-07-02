@@ -1,1 +1,1 @@
-"# shooshook" 
+"# shooshook generator" 
